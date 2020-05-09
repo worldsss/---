@@ -1,0 +1,33 @@
+server:
+  port: 8090
+spring:
+  #数据库连接配置
+  datasource:
+    driver-class-name:  com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bcy?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+  mvc:
+    static-path-pattern: /static/**
+  servlet:
+    multipart:
+      max-file-size: -1MB
+      max-request-size: -1MB
+  resources:
+    static-locations: classpath:/static/
+
+
+#mybatis的相关配置
+mybatis:
+  type-aliases-package: com.example.bcyimitation.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+#开启驼峰匹配
+
+
+#  #mapper配置文件
+#  mapper-locations: classpath:mapper/*.xml
+
+#  #开启驼峰命名
+#  configuration:
+#    map-underscore-to-camel-case: true
